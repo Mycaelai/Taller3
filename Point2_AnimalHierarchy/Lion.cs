@@ -11,5 +11,17 @@ namespace Point2_AnimalHierarchy
         public Lion(string food, string size, string origin, string furColor) : base(food, size, origin, furColor)
         {
         }
+
+        public override void Eat()
+        {
+            base.Eat();
+            Console.WriteLine("I'm a Lion and I feed myself with: ");
+        }
+
+        public override void DoNoice()
+        {
+            base.DoNoice();
+            Console.WriteLine("(Lion noices)\tRaaa, Raaa");
+        }
     }
 }

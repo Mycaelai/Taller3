@@ -35,7 +35,30 @@ namespace Point2_AnimalHierarchy
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int i = 0;
+            bool flag = false;
+
+            do
+            {
+                //switch para la creacion de los animales, se va a trabajar con switch dentro de switch de momento
+                //Alabada sean las Gachas
+                Console.WriteLine("Welcome to Build a Pet Workshop");
+
+                switch(i)
+                {
+                    case 1:
+                        break;
+
+                    case 2:
+                        break;
+
+                    case 3:
+                        Console.Write("You have exited the program, Sayonara");
+                        flag = true;
+                        break;
+                }    
+
+            } while (!flag);
         }
     }
 }

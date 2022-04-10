@@ -23,10 +23,5 @@ namespace Point2_AnimalHierarchy
         {
             throw new NotImplementedException();
         }
-
-        public override void State()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

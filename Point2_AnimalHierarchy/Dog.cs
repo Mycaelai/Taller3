@@ -23,5 +23,17 @@ namespace Point2_AnimalHierarchy
         {
             throw new NotImplementedException();
         }
+
+        public override void Eat()
+        {
+            base.Eat();
+            Console.WriteLine("I'm a Dog and I'm feed with: ");
+        }
+
+        public override void DoNoice()
+        {
+            base.DoNoice();
+            Console.WriteLine("(Dog noices)\tRaaa, Raaa");
+        }
     }
 }
