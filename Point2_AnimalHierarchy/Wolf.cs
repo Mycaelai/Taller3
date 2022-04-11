@@ -15,14 +15,12 @@ namespace Point2_AnimalHierarchy
 
         public override void Eat()
         {
-            base.Eat();
-            Console.Write("I'm a Wolf and I eat: " + Food);
+            Console.WriteLine("I'm a Wolf and I eat: " + Food + "\n");
         }
 
         public override void DoNoice()
         {
-            base.DoNoice();
-            Console.WriteLine("(Wolf noices)\tHowl, Howl\n");
+            Console.WriteLine("Wolf noices:\tHowl, Howl");
         }
     }
 }

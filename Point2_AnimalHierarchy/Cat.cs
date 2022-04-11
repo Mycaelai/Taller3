@@ -17,7 +17,7 @@ namespace Point2_AnimalHierarchy
 
         public void Bath()
         {
-            Console.WriteLine("Cat bath with soap");
+            Console.WriteLine(Tag + " is bath with: \tSoap");
         }
 
         public void Vaccinate()
@@ -27,19 +27,17 @@ namespace Point2_AnimalHierarchy
 
         public override void Eat()
         {
-            base.Eat();
-            Console.Write("I'm a Cat and I'm feed with: " + Food);
+            Console.WriteLine("I'm a Cat and I'm feed with: " + Food + "\n");
         }
 
         public override void DoNoice()
         {
-            base.DoNoice();
-            Console.WriteLine("(Cat noices)\tMeow, Meow\n");
+            Console.WriteLine("Cat noices:\tMeow, Meow");
         }
 
         public override void Show()
         {
-            Console.WriteLine("Name:\t" + name);
+            Console.WriteLine("Name:\t\t" + name + "\nStatus:\t\t" + IPet.Status);
             base.Show();
         }
     }

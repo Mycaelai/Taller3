@@ -30,7 +30,9 @@ namespace Point2_AnimalHierarchy
         public override void Show()
         {
             base.Show();
-            Console.Write("Fur Color:\t" + FurColor);
+            Console.WriteLine("Fur Color:\t" + FurColor);
+            DoNoice();
+            Eat();
         }
     }
 }

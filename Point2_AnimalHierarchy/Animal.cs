@@ -30,17 +30,17 @@ namespace Point2_AnimalHierarchy
 
         public virtual void Show()
         {
-            Console.WriteLine("Specie:\t" + Tag);
+            Console.WriteLine("Specie:\t\t" + Tag);
             if (State == false)
             {
-                Console.WriteLine("Status:\tSleep");
+                Console.WriteLine("Status:\t\tSleep");
             }
             else
             {
-                Console.WriteLine("Status:\tAwake");
+                Console.WriteLine("Status:\t\tAwake");
             }
-            Console.WriteLine("Origin:\t" + Origin);
-            Console.WriteLine("Size:\t" + Size);
+            Console.WriteLine("Origin:\t\t" + Origin);
+            Console.WriteLine("Size:\t\t" + Size);
         }
         public void ModifyState()
         {
@@ -52,21 +52,22 @@ namespace Point2_AnimalHierarchy
                 Console.WriteLine("State: Sleep");
 
             Console.WriteLine("Do want to change the state of the Animal\n1)\tYes\n2)\tNo");
-            switch(i)
+            i = Convert.ToInt32(Console.ReadLine());
+            switch (i)
             {
                 case 1:
                     if (state == false)
                     {
                         state = true;
-                        Console.WriteLine("State: " + state);
+                        Console.WriteLine("State: Awake");
                     }
                     else
                     {
                         state = false;
-                        Console.WriteLine("State: " + state);
+                        Console.WriteLine("State: Sleep");
                     }
-                        
                     break;
+
                 case 2:
                     Console.WriteLine("Bye then");
                     break;

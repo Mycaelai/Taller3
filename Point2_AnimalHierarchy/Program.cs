@@ -3,29 +3,30 @@ using System.Collections.Generic;
 
 /*
  Enunciado:
-- Todos los animales pueden comer, pero cada uno come de forma diferente
-- Todos los animales están despiertos o dormidos (estado)
-- Todos los animales hacen un ruido, pero cada uno lo hace un ruido diferente
-- Solo las mascotas (gatos o perros):
-o Tienen un nombre
+- Todos los animales pueden comer, pero cada uno come de forma diferente                DONE
+- Todos los animales están despiertos o dormidos (estado)   DONE
+- Todos los animales hacen un ruido, pero cada uno lo hace un ruido diferente           DONE
+- Solo las mascotas (gatos o perros):                                                   DONE
+o Tienen un nombre                                                                      DONE
 o Pueden ser vacunados: a los perros se les vacuna de forma subcutánea, a los gatos
-de forma inocular
-o Pueden ser bañados: a los perros con champú, a los gatos con jabón
+de forma inocular                                                                       DONE
+o Pueden ser bañados: a los perros con champú, a los gatos con jabón                    DONE
 
 Crear un menú que permita:
-- Crear felinos o caninos
-- Si se elige felinos debe permitir crear leones, tigres, o gatos
-- Si se elige caninos debe permitir crear perros o lobos
+- Crear felinos o caninos                                                               DONE
+- Si se elige felinos debe permitir crear leones, tigres, o gatos                       DONE
+- Si se elige caninos debe permitir crear perros o lobos                                DONE
 - Ver el ruido que hace cada animal.
 - Ver el nombre de las mascotas creadas, su origen, lo que pueden comer, y su tamaño.
 - Ver los animales que están dormidos o despiertos, (despiertos estado=1; dormidos
 estado=0)
-- El programa termina cuando el usuario elija la opción salir. 
+- El programa termina cuando el usuario elija la opción salir.                          DONE
 
  */
 
 namespace Point2_AnimalHierarchy
 {
+    //Interfaz para las mascotas
     interface IPet
     {
         static string Status = "Pet";
@@ -36,23 +37,31 @@ namespace Point2_AnimalHierarchy
     {
         static void Main(string[] args)
         {
+            //Aca esta  la variable del switch, la bandera del "Do While" & el n1 para los nombres
             int i = 0;
             bool flag = false;
-            string n1, n2, n3, n4;
+            string n1;
 
-            string[] animalSizes = { "Small","Small-medium","Medium","Big"};
-            string[] felineFood = { "Whiskas" , "Salmon" , "Tuna" , "Chiken" , "Suplements"};
-            string[] canineFood = { "Red Meat" , "Lamb" , "Vitamins" , "Hills" , "Pork"};
-            string[] origins = { "South-America" , "North-America" , "Europe" , "Asia" , "Africa" , "Oceania"};
+            //Aca se inicializan los arreglos de los atributos de los animales
+            //Tamaño
+            string[] animalSizes = { "Small", "Small-medium", "Medium", "Big" };
+            //Tipo de comida. NOTA: Es diferente para caninos y felinos
+            string[] felineFood = { "Whiskas", "Salmon", "Tuna", "Chiken", "Suplements" };
+            string[] canineFood = { "Red Meat", "Lamb", "Vitamins", "Hills", "Pork" };
+            //El origen de los animales
+            string[] origins = { "South-America", "North-America", "Europe", "Asia", "Africa", "Oceania" };
+            //Y los atributos del orden felino y canino. -> Pelaje & Garras
             string[] fur = { "Tabby", "Solid" , "Bicolor" , "Tricolor" , "Colorpoint" , "Shiny"};
             string[] claws = { "Small", "Small-medium", "Medium", "Big" };
 
-            Random random = new Random();
+            //Creacion de la lista de animales
             List<Animal> animals = new List<Animal>();
-            
+
+            Random random = new Random();
+
             do
             {
-                //switch para la creacion de los animales, se va a trabajar con switch dentro de switch de momento
+                //Switch del Menu
                 //Alabada sean las Gachas
                 Console.WriteLine("Welcome to Build a Pet Workshop\nHere you can pick if you want to have an animal, like a gacha");
                 Console.WriteLine("1)\tAdd a Feline Animal.\n2)\tAdd a Canine Animal.\n3)\tManage Animals.\n4)\tGet out of the store.");
@@ -61,19 +70,22 @@ namespace Point2_AnimalHierarchy
                 switch (i)
                 {
                     case 1:
-                        Console.WriteLine("Congrats you decide to add a feline please pick up between this variants:");
-                        Console.WriteLine("1)\tTiger\n2)\tLion\n3)\tCat");
+                        //Creacion de Felinos
+                        Console.WriteLine("\nCongrats you decide to add a Feline please pick up between this variants:");
+                        Console.WriteLine("1)\tTiger.\n2)\tLion.\n3)\tCat.");
                         i = Convert.ToInt32(Console.ReadLine());
 
                         switch (i)
                         {
                             case 1:
+                                //Instanciamos
                                 Tiger tiger;
+                                //Asignamos los atributos con el {random}, y los respectivos arreglos correspondientes por categoria, {food,size,origin,fur(solo para felino)}
                                 tiger = new Tiger(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)]);
+                                //Adicionamos el animal al arreglo
                                 animals.Add(tiger);
+                                //Mostramos la informacion del animal
                                 tiger.Show();
-                                tiger.Eat();
-                                tiger.DoNoice();
                                 break;
 
                             case 2:
@@ -81,26 +93,23 @@ namespace Point2_AnimalHierarchy
                                 lion = new Lion(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)]);
                                 animals.Add(lion);
                                 lion.Show();
-                                lion.Eat();
-                                lion.DoNoice();
                                 break; 
 
                             case 3:
-                                Console.WriteLine("This is a domestic specie, so you need to add a name");
+                                Console.Write("This is a domestic specie, so you need to add a name:\t");
                                 Cat cat;
-                                Console.Write("Add name:\t");
+                                //Los Animales dosmesticos requieren nombre, por lo que aca se le pide al usuario
                                 n1 = Console.ReadLine();
                                 cat = new Cat(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)],n1);
                                 animals.Add(cat);
                                 cat.Show();
-                                cat.Eat();
-                                cat.DoNoice();
                                 break;
                         }
                         break;
 
                     case 2:
-                        Console.WriteLine("Congrats you decide to add a canine please pick up between this variants:");
+                        //Creacion de Caninos
+                        Console.WriteLine("\nCongrats you decide to add a Canine please pick up between this variants:");
                         Console.WriteLine("1)\tWolf\n2)\tDog");
                         i = Convert.ToInt32(Console.ReadLine());
 
@@ -108,37 +117,36 @@ namespace Point2_AnimalHierarchy
                         {
                             case 1:
                                 Wolf wolf;
-                                wolf = new Wolf(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)]);
+                                //{ food,size,origin,claws(solo para canino)}
+                                wolf = new Wolf(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)]);
                                 animals.Add(wolf);
                                 wolf.Show();
-                                wolf.Eat();
-                                wolf.DoNoice();
                                 break;
 
                             case 2:
-                                Console.WriteLine("This is a domestic specie, so you need to add a name");
+                                Console.WriteLine("This is a domestic specie, so you need to add a name:\t");
                                 Dog dog;
-                                Console.Write("Add name:\t");
                                 n1 = Console.ReadLine();
-                                dog = new Dog(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)],n1);
+                                dog = new Dog(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)],n1);
                                 animals.Add(dog);
                                 dog.Show();
-                                dog.Eat();
-                                dog.DoNoice();
                                 break;
                         }
                         break;
 
                     case 3:
+                        //Maya Aca es la opcion para que implementes los puntos que faltan, todo lo que tiene DONE en la parte de arriba del documento esta hecho (Borra esto cuando lo hagas)
+                        /**/
                         Console.Write("Space to Manage Animals");
                         break;
 
                     case 4:
+                        //Salida del programa
                         Console.Write("You have exited the program, Sayonara");
                         flag = true;
                         break;
-                }    
-
+                }
+                
             } while (!flag);
         }
     }

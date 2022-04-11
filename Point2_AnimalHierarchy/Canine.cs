@@ -30,6 +30,8 @@ namespace Point2_AnimalHierarchy
         {
             base.Show();
             Console.WriteLine("Claws Size:\t" + ClawsSize);
+            DoNoice();
+            Eat();
         }
     }
 }
