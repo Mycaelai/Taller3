@@ -20,7 +20,7 @@ namespace Point2_AnimalHierarchy
 
         public override void DoNoice()
         {
-            Console.WriteLine("Tiger noices:\tRoar, Roar");
+            Console.WriteLine("Tiger noices:\tRoar, Roar"); //holass
         }
     }
 }
