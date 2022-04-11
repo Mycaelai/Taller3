@@ -15,6 +15,8 @@ namespace Point2_AnimalHierarchy
             this.furColor = furColor;
         }
 
+        public string FurColor { get => furColor; set => furColor = value; }
+
         public override void DoNoice()
         {
             throw new NotImplementedException();

@@ -10,24 +10,25 @@ namespace Point2_AnimalHierarchy
     {
         string name;
 
-        public Dog(string food, string size, string origin, string clawsSize) : base(food, size, origin, clawsSize)
+        public Dog(string food, string size, string origin, string clawsSize, string name) : base(food, size, origin, clawsSize)
         {
+            this.name = name;
         }
 
         public void Bath()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Dog bath with shampu");
         }
 
         public void Vaccinate()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("You have inoculate vaccinated " + name);
         }
 
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine("I'm a Dog and I'm feed with: ");
+            Console.WriteLine("I'm a Dog and I'm feed with: " + Food);
         }
 
         public override void DoNoice()

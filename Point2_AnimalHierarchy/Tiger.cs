@@ -15,7 +15,7 @@ namespace Point2_AnimalHierarchy
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine("I'm a Tiger and I feed myself with: ");
+            Console.WriteLine("I'm a Tiger and I eat: " + Food);
         }
 
         public override void DoNoice()

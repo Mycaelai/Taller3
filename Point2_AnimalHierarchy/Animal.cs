@@ -11,6 +11,10 @@ namespace Point2_AnimalHierarchy
         string food, size, origin;
         bool state;
 
+        public string Food { get => food; set => food = value; }
+        public string Size { get => size; set => size = value; }
+        public string Origin { get => origin; set => origin = value; }
+
         protected Animal(string food, string size, string origin)
         {
             this.food = food;

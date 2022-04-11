@@ -14,6 +14,8 @@ namespace Point2_AnimalHierarchy
             this.clawsSize = clawsSize;
         }
 
+        public string ClawsSize { get => clawsSize; set => clawsSize = value; }
+
         public override void DoNoice()
         {
             throw new NotImplementedException();

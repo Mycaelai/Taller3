@@ -16,18 +16,18 @@ namespace Point2_AnimalHierarchy
 
         public void Bath()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Cat bath with soap");
         }
 
         public void Vaccinate()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("You have subcutaneously vaccinated " + name);
         }
 
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine("I'm a Cat and I feed myself with: ");
+            Console.WriteLine("I'm a Cat and I feed myself with: " + Food);
         }
 
         public override void DoNoice()
