@@ -10,18 +10,19 @@ namespace Point2_AnimalHierarchy
     {
         public Tiger(string food, string size, string origin, string furColor) : base(food, size, origin, furColor)
         {
+            Tag = "Tiger";
         }
 
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine("I'm a Tiger and I eat: " + Food);
+            Console.Write("I'm a Tiger and I eat: " + Food);
         }
 
         public override void DoNoice()
         {
             base.DoNoice();
-            Console.WriteLine("(Tiger noices)\tRoar, Roar");
+            Console.WriteLine("(Tiger noices)\tRoar, Roar\n");
         }
     }
 }

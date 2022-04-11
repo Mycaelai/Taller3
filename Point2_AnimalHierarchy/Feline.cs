@@ -19,12 +19,18 @@ namespace Point2_AnimalHierarchy
 
         public override void DoNoice()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("");
         }
 
         public override void Eat()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("");
+        }
+
+        public override void Show()
+        {
+            base.Show();
+            Console.Write("Fur Color:\t" + FurColor);
         }
     }
 }

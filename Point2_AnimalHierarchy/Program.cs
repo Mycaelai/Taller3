@@ -28,6 +28,7 @@ namespace Point2_AnimalHierarchy
 {
     interface IPet
     {
+        static string Status = "Pet";
         public void Vaccinate();
         public void Bath();
     }
@@ -70,26 +71,37 @@ namespace Point2_AnimalHierarchy
                                 Tiger tiger;
                                 tiger = new Tiger(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)]);
                                 animals.Add(tiger);
+                                tiger.Show();
+                                tiger.Eat();
+                                tiger.DoNoice();
                                 break;
 
                             case 2:
                                 Lion lion;
                                 lion = new Lion(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)]);
                                 animals.Add(lion);
-                                break;
+                                lion.Show();
+                                lion.Eat();
+                                lion.DoNoice();
+                                break; 
 
                             case 3:
+                                Console.WriteLine("This is a domestic specie, so you need to add a name");
                                 Cat cat;
+                                Console.Write("Add name:\t");
                                 n1 = Console.ReadLine();
                                 cat = new Cat(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)],n1);
                                 animals.Add(cat);
+                                cat.Show();
+                                cat.Eat();
+                                cat.DoNoice();
                                 break;
                         }
                         break;
 
                     case 2:
                         Console.WriteLine("Congrats you decide to add a canine please pick up between this variants:");
-                        Console.Write("1)\tWolf\n2)\tDog");
+                        Console.WriteLine("1)\tWolf\n2)\tDog");
                         i = Convert.ToInt32(Console.ReadLine());
 
                         switch (i)
@@ -98,13 +110,21 @@ namespace Point2_AnimalHierarchy
                                 Wolf wolf;
                                 wolf = new Wolf(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)]);
                                 animals.Add(wolf);
+                                wolf.Show();
+                                wolf.Eat();
+                                wolf.DoNoice();
                                 break;
 
                             case 2:
+                                Console.WriteLine("This is a domestic specie, so you need to add a name");
                                 Dog dog;
+                                Console.Write("Add name:\t");
                                 n1 = Console.ReadLine();
                                 dog = new Dog(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)],n1);
                                 animals.Add(dog);
+                                dog.Show();
+                                dog.Eat();
+                                dog.DoNoice();
                                 break;
                         }
                         break;

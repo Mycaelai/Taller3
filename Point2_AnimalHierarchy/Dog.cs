@@ -13,6 +13,7 @@ namespace Point2_AnimalHierarchy
         public Dog(string food, string size, string origin, string clawsSize, string name) : base(food, size, origin, clawsSize)
         {
             this.name = name;
+            Tag = "Dog";
         }
 
         public void Bath()
@@ -28,13 +29,19 @@ namespace Point2_AnimalHierarchy
         public override void Eat()
         {
             base.Eat();
-            Console.WriteLine("I'm a Dog and I'm feed with: " + Food);
+            Console.Write("I'm a Dog and I'm feed with: " + Food);
         }
 
         public override void DoNoice()
         {
             base.DoNoice();
-            Console.WriteLine("(Dog noices)\tRaaa, Raaa");
+            Console.WriteLine("(Dog noices)\tRaaa, Raaa\n");
+        }
+
+        public override void Show()
+        {
+            Console.WriteLine("Name:\t" + name);
+            base.Show();
         }
     }
 }

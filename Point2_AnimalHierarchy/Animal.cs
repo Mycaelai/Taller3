@@ -8,12 +8,14 @@ namespace Point2_AnimalHierarchy
 {
     abstract class Animal
     {
-        string food, size, origin;
+        string food, size, origin, tag;
         bool state;
 
         public string Food { get => food; set => food = value; }
         public string Size { get => size; set => size = value; }
         public string Origin { get => origin; set => origin = value; }
+        public string Tag { get => tag; set => tag = value; }
+        public bool State { get => state; set => state = value; }
 
         protected Animal(string food, string size, string origin)
         {
@@ -26,7 +28,21 @@ namespace Point2_AnimalHierarchy
         public abstract void Eat();
         public abstract void DoNoice();
 
-        public void State()
+        public virtual void Show()
+        {
+            Console.WriteLine("Specie:\t" + Tag);
+            if (State == false)
+            {
+                Console.WriteLine("Status:\tSleep");
+            }
+            else
+            {
+                Console.WriteLine("Status:\tAwake");
+            }
+            Console.WriteLine("Origin:\t" + Origin);
+            Console.WriteLine("Size:\t" + Size);
+        }
+        public void ModifyState()
         {
             int i = 0;
             //Indicador estado de los animales, {0} es dormido y {1} es despierto
