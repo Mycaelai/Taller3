@@ -82,7 +82,7 @@ namespace Point2_AnimalHierarchy
                                 Tiger tiger;
                                 //Asignamos los atributos con el {random}, y los respectivos arreglos correspondientes por categoria, {food,size,origin,fur(solo para felino)}
                                 tiger = new Tiger(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)]);
-                                //Adicionamos el animal al arreglo
+                                //Adicionamos el animal a la lista
                                 animals.Add(tiger);
                                 //Mostramos la informacion del animal
                                 tiger.Show();
@@ -117,7 +117,7 @@ namespace Point2_AnimalHierarchy
                         {
                             case 1:
                                 Wolf wolf;
-                                //{ food,size,origin,claws(solo para canino)}
+                                //  {food,size,origin,claws(solo para canino)}
                                 wolf = new Wolf(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)]);
                                 animals.Add(wolf);
                                 wolf.Show();
@@ -136,7 +136,13 @@ namespace Point2_AnimalHierarchy
 
                     case 3:
                         //Maya Aca es la opcion para que implementes los puntos que faltan, todo lo que tiene DONE en la parte de arriba del documento esta hecho (Borra esto cuando lo hagas)
-                        /**/
+                        /*
+                         Ver el ruido
+                         Ver elementos de las mascotas, entonces para eso puedes utilizar el Tag que puso, entonces asi emperejas con eso
+                         Una opcion para cambiar el estado de dormir a despierto y viceversa, el metodo ya esta implementado, asi que es mas por menu
+                         Los animales domesticos tiene acciones propias entoces hacerlas accesibles (Vacunar & Bañar)
+                         Puedes hacer una lista enorme o con switches dentro switches, si es asi mi recomendacion es que diferencies las opciones para domesticos
+                         */
                         Console.Write("Space to Manage Animals");
                         break;
 

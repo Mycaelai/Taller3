@@ -8,13 +8,16 @@ namespace Point2_AnimalHierarchy
 {
     abstract class Animal
     {
-        string food, size, origin, tag;
-        bool state;
+        //Atributos string
+        private string food, size, origin, tag;
+        //Estado del Sueño
+        private bool state;
 
-        public string Food { get => food; set => food = value; }
-        public string Size { get => size; set => size = value; }
-        public string Origin { get => origin; set => origin = value; }
-        public string Tag { get => tag; set => tag = value; }
+        //Encapsulamiento de todas las propiedades
+        protected string Food { get => food; set => food = value; }
+        protected string Size { get => size; set => size = value; }
+        protected string Origin { get => origin; set => origin = value; }
+        protected string Tag { get => tag; set => tag = value; }
         public bool State { get => state; set => state = value; }
 
         protected Animal(string food, string size, string origin)
@@ -22,12 +25,15 @@ namespace Point2_AnimalHierarchy
             this.food = food;
             this.size = size;
             this.origin = origin;
+            //Todos los animales se spawnean Dormidos
             state = false;
         }
 
+        //Metodos Abstractos
         public abstract void Eat();
         public abstract void DoNoice();
 
+        //Visualizador
         public virtual void Show()
         {
             Console.WriteLine("Specie:\t\t" + Tag);
@@ -46,6 +52,7 @@ namespace Point2_AnimalHierarchy
         {
             int i = 0;
             //Indicador estado de los animales, {0} es dormido y {1} es despierto
+            //Aca se indica el estado de los animales
             if (state == true)
                 Console.WriteLine("State: Awake");
             else
@@ -53,6 +60,7 @@ namespace Point2_AnimalHierarchy
 
             Console.WriteLine("Do want to change the state of the Animal\n1)\tYes\n2)\tNo");
             i = Convert.ToInt32(Console.ReadLine());
+            //Switch de cambio de estado
             switch (i)
             {
                 case 1:

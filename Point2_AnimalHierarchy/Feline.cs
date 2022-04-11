@@ -29,6 +29,7 @@ namespace Point2_AnimalHierarchy
 
         public override void Show()
         {
+            //No quitar el base, esta es la referncia al metodo Show de la Clase Animal
             base.Show();
             Console.WriteLine("Fur Color:\t" + FurColor);
             DoNoice();

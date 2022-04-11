@@ -39,6 +39,7 @@ namespace Point2_AnimalHierarchy
         public override void Show()
         {
             Console.WriteLine("Name:\t\t" + name + "\nStatus:\t\t" + IPet.Status);
+            //No quitar el base, esta es la referncia al metodo Show de la Clase Canino
             base.Show();
         }
     }
