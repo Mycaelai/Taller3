@@ -49,15 +49,45 @@ namespace Point3_Chess
     {
         static void Main(string[] args)
         {
+            int i = 0;
+            bool flag = false;
+            string n;
 
             Player player = new Player("Elen");
             Player player1 = new Player("Alan");
-            Player[] players = new Player[2] { player,player1};
+            Player[] players = new Player[2] { player, player1 };
 
             Game game = new Game(players);
+            players[0].Color = true;
+            players[1].Color = false;
             game.CodeCreation();
             game.Show();
 
+            List<Player> players1 = new List<Player>();
+            List<Game> games = new List<Game>();
+            game.GameTime();
+            Console.WriteLine(game.MatchTime);
+
+            do
+            {
+                Console.WriteLine("Welcome Ladys and Gentleman this is Amaateur Grand Chess Tournament");
+                i = Convert.ToInt32(Console.ReadLine());
+                switch(i)
+                {
+                    case 1:
+                        break;
+
+                    case 2:
+                        break;
+
+                    case 3:
+                        break;
+
+                    case 4:
+                        break;
+
+                }
+            } while (!flag);
         }
     }
 }

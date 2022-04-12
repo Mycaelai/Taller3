@@ -8,25 +8,38 @@ namespace Point3_Chess
 {
     class Player
     {
-        string name;
-        int score;
-        float gamesWon;
-        bool color;
+        private string name;
+        private int score;
+        private float gamesWon;
+        //Color of the player pieces {true} = White || {false} = Black
+        private bool color;
+
+        public string Name { get => name; set => name = value; }
+        public int Score { get => score; set => score = value; }
+        public float GamesWon { get => gamesWon; set => gamesWon = value; }
+        public bool Color { get => color; set => color = value; }
 
         public Player(string name)
         {
-            this.name = name;
-            score = 0;
-            gamesWon = 0;
+            this.Name = name;
+            Score = 0;
+            GamesWon = 0;
+        }
+
+        public void Show()
+        {
+            Console.WriteLine("Player name:\t" + Name);
+            Console.WriteLine("Score:\t" + Score);
+            Console.WriteLine("Games Won:\t" + GamesWon);
         }
 
         public void SaveScore()
         {
-            score = score + 100;
-            gamesWon = gamesWon + 1;
-            Console.WriteLine("Update\nPlayer name:\t" + name);
-            Console.WriteLine("New Score:\t" + score);
-            Console.WriteLine("Games Won:\t" + gamesWon);
+            Score = Score + 100;
+            GamesWon = GamesWon + 1;
+            Console.WriteLine("Update\nPlayer name:\t" + Name);
+            Console.WriteLine("New Score:\t" + Score);
+            Console.WriteLine("Games Won:\t" + GamesWon);
         }
 
     }

@@ -14,7 +14,12 @@ namespace Point3_Chess
         public Table()
         {
             tableCode = "";
-            pieces = new Piece [36];
+            pieces = new Piece [32];
+        }
+
+        public void Show()
+        {
+            Console.WriteLine(tableCode);
         }
 
         public void CodeCreation()
