@@ -6,28 +6,40 @@ using System.Threading.Tasks;
 
 namespace Point3_Chess
 {
-    abstract class Piece
+     class Piece 
     {
-        string pieceCode;
-        string color;
+        string tag, pieceCode, color;
         static string size;
         //Arreglo de dos posiciones en el cual el primer digito representa la fila y el segundo la columna
-        int[] position;
+        int position;
+        //State in game of the pieces {true} = Alive || {false} = Death
         bool state;
 
-        public Piece(string color, int[] position)
+        public string Color { get => color; set => color = value; }
+
+        public Piece(string color, int position)
         {
+            tag = "none";
             pieceCode = "";
-            this.color = color;
+            CodeCreation();
+
+            this.Color = color;
+            size = "3 cm";
+
             this.position = position;
-            size = "2 Inchs";
-            position = new int[2];
+
+            state = true;
+        }
+
+        public void Show()
+        {
+            Console.Write("Code: " + pieceCode + $" Color: {Color}\t");
         }
 
         public void CodeCreation()
         {
             string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            char[] code = new char[8];
+            char[] code = new char[2];
             Random random = new Random();
 
             for (int i = 0; i < code.Length; i++)
@@ -38,6 +50,9 @@ namespace Point3_Chess
             pieceCode = resultCode;
         }
 
-        public abstract void Movement();
+        public virtual void Movement()
+        {
+
+        }
     }
 }

@@ -11,7 +11,7 @@ namespace Point3_Chess
         private string name;
         private int score;
         private float gamesWon;
-        //Color of the player pieces {true} = White || {false} = Black
+        //Color de las piezas {true} = White || {false} = Black
         private bool color;
 
         public string Name { get => name; set => name = value; }
