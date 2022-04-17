@@ -53,6 +53,7 @@ namespace Point2_AnimalHierarchy
             //Y los atributos del orden felino y canino. -> Pelaje & Garras
             string[] fur = { "Tabby", "Solid" , "Bicolor" , "Tricolor" , "Colorpoint" , "Shiny"};
             string[] claws = { "Small", "Small-medium", "Medium", "Big" };
+            string[] sleepState = { "Asleep", "WOKE"};
 
             //Creacion de la lista de animales
             List<Animal> animals = new List<Animal>();
@@ -63,7 +64,7 @@ namespace Point2_AnimalHierarchy
             {
                 //Switch del Menu
                 //Alabada sean las Gachas
-                Console.WriteLine("Welcome to Build a Pet Workshop\nHere you can pick if you want to have an animal, like a gacha");
+                Console.WriteLine("\nWelcome to Build a Pet Workshop\nHere you can pick if you want to have an animal, like a gacha");
                 Console.WriteLine("1)\tAdd a Feline Animal.\n2)\tAdd a Canine Animal.\n3)\tManage Animals.\n4)\tGet out of the store.");
                 i = Convert.ToInt32(Console.ReadLine());
 
@@ -81,7 +82,7 @@ namespace Point2_AnimalHierarchy
                                 //Instanciamos
                                 Tiger tiger;
                                 //Asignamos los atributos con el {random}, y los respectivos arreglos correspondientes por categoria, {food,size,origin,fur(solo para felino)}
-                                tiger = new Tiger(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)]);
+                                tiger = new Tiger(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)], sleepState[random.Next(sleepState.Length)]);
                                 //Adicionamos el animal a la lista
                                 animals.Add(tiger);
                                 //Mostramos la informacion del animal
@@ -90,7 +91,7 @@ namespace Point2_AnimalHierarchy
 
                             case 2:
                                 Lion lion;
-                                lion = new Lion(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)]);
+                                lion = new Lion(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)], sleepState[random.Next(sleepState.Length)]);
                                 animals.Add(lion);
                                 lion.Show();
                                 break; 
@@ -100,7 +101,7 @@ namespace Point2_AnimalHierarchy
                                 Cat cat;
                                 //Los Animales dosmesticos requieren nombre, por lo que aca se le pide al usuario
                                 n1 = Console.ReadLine();
-                                cat = new Cat(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)],n1);
+                                cat = new Cat(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)], n1, sleepState[random.Next(sleepState.Length)]);
                                 animals.Add(cat);
                                 cat.Show();
                                 break;
@@ -118,7 +119,7 @@ namespace Point2_AnimalHierarchy
                             case 1:
                                 Wolf wolf;
                                 //  {food,size,origin,claws(solo para canino)}
-                                wolf = new Wolf(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)]);
+                                wolf = new Wolf(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)], sleepState[random.Next(sleepState.Length)]);
                                 animals.Add(wolf);
                                 wolf.Show();
                                 break;
@@ -127,7 +128,7 @@ namespace Point2_AnimalHierarchy
                                 Console.WriteLine("This is a domestic specie, so you need to add a name:\t");
                                 Dog dog;
                                 n1 = Console.ReadLine();
-                                dog = new Dog(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)],n1);
+                                dog = new Dog(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)], n1, sleepState[random.Next(sleepState.Length)]);
                                 animals.Add(dog);
                                 dog.Show();
                                 break;
@@ -143,8 +144,29 @@ namespace Point2_AnimalHierarchy
                          Los animales domesticos tiene acciones propias entoces hacerlas accesibles (Vacunar & Bañar)
                          Puedes hacer una lista enorme o con switches dentro switches, si es asi mi recomendacion es que diferencies las opciones para domesticos
                          */
-                        Console.Write("Space to Manage Animals");
+                        Console.Write("Select an option");
+                        Console.Write("\n1)\tShow the noises of each animal.\n2)\tShow the name and characteristics of each animal and if they are asleep or awake.\n");
+                        i = Convert.ToInt32(Console.ReadLine());
+
+                        switch (i)
+                        {
+                            case 1:
+                                foreach( Animal item in animals)
+                                {
+                                    item.DoNoice();
+                                }
+                                break;
+
+                            case 2:
+                                foreach (Animal item in animals)
+                                {
+                                    item.Show();
+                                }
+                                break;
+
+                        }
                         break;
+                       
 
                     case 4:
                         //Salida del programa

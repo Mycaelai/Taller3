@@ -9,7 +9,7 @@ namespace Point2_AnimalHierarchy
     class Cat : Feline , IPet
     {
         string name;
-        public Cat(string food, string size, string origin, string furColor, string name) : base(food, size, origin, furColor)
+        public Cat(string food, string size, string origin, string furColor, string name, string sleepState) : base(food, size, origin, furColor, sleepState)
         {
             this.name = name;
             Tag = "Cat";

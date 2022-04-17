@@ -9,7 +9,7 @@ namespace Point2_AnimalHierarchy
     class Canine : Animal
     {
         string clawsSize;
-        public Canine(string food, string size, string origin, string clawsSize) : base(food, size, origin)
+        public Canine(string food, string size, string origin, string clawsSize, string sleepState) : base(food, size, origin, sleepState)
         {
             this.clawsSize = clawsSize;
         }

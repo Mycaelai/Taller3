@@ -9,22 +9,25 @@ namespace Point2_AnimalHierarchy
     abstract class Animal
     {
         //Atributos string
-        private string food, size, origin, tag;
+        private string food, size, origin, tag, sleepState;
         //Estado del Sueño
         private bool state;
 
         //Encapsulamiento de todas las propiedades
-        protected string Food { get => food; set => food = value; }
-        protected string Size { get => size; set => size = value; }
-        protected string Origin { get => origin; set => origin = value; }
-        protected string Tag { get => tag; set => tag = value; }
-        public bool State { get => state; set => state = value; }
 
-        protected Animal(string food, string size, string origin)
+        public bool State { get => state; set => state = value; }
+        public string Food { get => food; set => food = value; }
+        public string Size { get => size; set => size = value; }
+        public string Origin { get => origin; set => origin = value; }
+        public string Tag { get => tag; set => tag = value; }
+        public string SleepState { get => sleepState; set => sleepState = value; }
+
+        protected Animal(string food, string size, string origin,string sleepState)
         {
-            this.food = food;
-            this.size = size;
-            this.origin = origin;
+            this.Food = food;
+            this.Size = size;
+            this.Origin = origin;
+            this.SleepState = sleepState;
             //Todos los animales se spawnean Dormidos
             state = false;
         }
@@ -37,14 +40,7 @@ namespace Point2_AnimalHierarchy
         public virtual void Show()
         {
             Console.WriteLine("Specie:\t\t" + Tag);
-            if (State == false)
-            {
-                Console.WriteLine("Status:\t\tSleep");
-            }
-            else
-            {
-                Console.WriteLine("Status:\t\tAwake");
-            }
+            Console.WriteLine("Satus:\t\t" + sleepState);
             Console.WriteLine("Origin:\t\t" + Origin);
             Console.WriteLine("Size:\t\t" + Size);
         }

@@ -10,7 +10,7 @@ namespace Point2_AnimalHierarchy
     {
         string furColor;
 
-        public Feline(string food, string size, string origin, string furColor) : base(food, size, origin)
+        public Feline(string food, string size, string origin, string furColor, string sleepState) : base(food, size, origin, sleepState)
         {
             this.furColor = furColor;
         }

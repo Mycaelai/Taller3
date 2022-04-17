@@ -8,7 +8,7 @@ namespace Point2_AnimalHierarchy
 {
     class Wolf : Canine
     {
-        public Wolf(string food, string size, string origin, string clawsSize) : base(food, size, origin, clawsSize)
+        public Wolf(string food, string size, string origin, string clawsSize, string sleepState) : base(food, size, origin, clawsSize, sleepState)
         {
             Tag = "Wolf";
         }

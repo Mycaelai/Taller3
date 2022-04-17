@@ -8,7 +8,7 @@ namespace Point2_AnimalHierarchy
 {
     class Tiger : Feline
     {
-        public Tiger(string food, string size, string origin, string furColor) : base(food, size, origin, furColor)
+        public Tiger(string food, string size, string origin, string furColor, string sleepState) : base(food, size, origin, furColor, sleepState)
         {
             Tag = "Tiger";
         }

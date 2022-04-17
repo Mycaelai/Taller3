@@ -10,7 +10,7 @@ namespace Point2_AnimalHierarchy
     {
         string name;
 
-        public Dog(string food, string size, string origin, string clawsSize, string name) : base(food, size, origin, clawsSize)
+        public Dog(string food, string size, string origin, string clawsSize, string name, string sleepState) : base(food, size, origin, clawsSize, sleepState)
         {
             this.name = name;
             Tag = "Dog";
