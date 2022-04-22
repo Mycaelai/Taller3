@@ -18,12 +18,12 @@ namespace Point2_AnimalHierarchy
 
         public void Bath()
         {
-            Console.WriteLine(Tag + " is bath with: \tShampu");
+            Console.WriteLine(Tag + "" + name + " is bath with: \tShampu");
         }
 
         public void Vaccinate()
         {
-            Console.WriteLine("You have inoculate vaccinated " + name);
+            Console.WriteLine("You have subcutaneously vaccinated " + name);   //Los perros es subcutánea no inocular.
         }
 
         public override void Eat()

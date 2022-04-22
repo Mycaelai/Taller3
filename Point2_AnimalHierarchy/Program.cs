@@ -17,8 +17,8 @@ Crear un menú que permita:
 - Si se elige felinos debe permitir crear leones, tigres, o gatos                       DONE
 - Si se elige caninos debe permitir crear perros o lobos                                DONE
 - Ver el ruido que hace cada animal.
-- Ver el nombre de las mascotas creadas, su origen, lo que pueden comer, y su tamaño.
-- Ver los animales que están dormidos o despiertos, (despiertos estado=1; dormidos
+- Ver el nombre de las mascotas creadas, su origen, lo que pueden comer, y su tamaño.   DONE
+- Ver los animales que están dormidos o despiertos, (despiertos estado=1; dormidos    DONE
 estado=0)
 - El programa termina cuando el usuario elija la opción salir.                          DONE
 
@@ -57,6 +57,7 @@ namespace Point2_AnimalHierarchy
 
             //Creacion de la lista de animales
             List<Animal> animals = new List<Animal>();
+            List<IPet> pets = new List<IPet>();
 
             Random random = new Random();
 
@@ -103,6 +104,7 @@ namespace Point2_AnimalHierarchy
                                 n1 = Console.ReadLine();
                                 cat = new Cat(felineFood[random.Next(felineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],fur[random.Next(fur.Length)], n1, sleepState[random.Next(sleepState.Length)]);
                                 animals.Add(cat);
+                                pets.Add(cat);
                                 cat.Show();
                                 break;
                         }
@@ -130,6 +132,7 @@ namespace Point2_AnimalHierarchy
                                 n1 = Console.ReadLine();
                                 dog = new Dog(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)], n1, sleepState[random.Next(sleepState.Length)]);
                                 animals.Add(dog);
+                                pets.Add(dog);
                                 dog.Show();
                                 break;
                         }
@@ -144,8 +147,8 @@ namespace Point2_AnimalHierarchy
                          Los animales domesticos tiene acciones propias entoces hacerlas accesibles (Vacunar & Bañar)
                          Puedes hacer una lista enorme o con switches dentro switches, si es asi mi recomendacion es que diferencies las opciones para domesticos
                          */
-                        Console.Write("Select an option");
-                        Console.Write("\n1)\tShow the noises of each animal.\n2)\tShow the name and characteristics of each animal and if they are asleep or awake.\n");
+                        Console.WriteLine("\nSelect an option");
+                        Console.WriteLine("\n1)\tShow the noises of each animal.\n2)\tShow the name and characteristics of each animal and if they are asleep or awake.\n3)\tManage Domestic necesities (Bathing and Vaccinating). ");
                         i = Convert.ToInt32(Console.ReadLine());
 
                         switch (i)
@@ -163,6 +166,29 @@ namespace Point2_AnimalHierarchy
                                     item.Show();
                                 }
                                 break;
+
+                            case 3:
+                                Console.WriteLine("\nSelect an option, be wary that we vaccinate and bath in full batches, so we will apply this decision for all domestic animals"); //En realidad el enunciado no encontré que pidiera en el menú poder vacunarlos y bañarlos, entonces por simpleza los puse en baches.
+                                Console.WriteLine("\n1)\t Vaccinate all domestic animals .\n2)\t Bath all animals.\n");
+                                i = Convert.ToInt32(Console.ReadLine());
+                                switch (i)
+                                {
+                                    case 1:
+                                        foreach(IPet item in pets)
+                                        {
+                                            
+                                            item.Vaccinate();
+                                        }
+                                        break;
+
+                                    case 2:
+                                        foreach( IPet item in pets)
+                                        {
+                                            item.Bath();
+                                        }
+                                        break;
+                                }
+                             break;
 
                         }
                         break;

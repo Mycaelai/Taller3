@@ -17,12 +17,12 @@ namespace Point2_AnimalHierarchy
 
         public void Bath()
         {
-            Console.WriteLine(Tag + " is bath with: \tSoap");
+            Console.WriteLine(Tag + "" + name + " is bath with: \tSoap");
         }
 
         public void Vaccinate()
         {
-            Console.WriteLine("You have subcutaneously vaccinated " + name);
+            Console.WriteLine("You have inoculate vaccinated " + name);   //taban al revés
         }
 
         public override void Eat()
