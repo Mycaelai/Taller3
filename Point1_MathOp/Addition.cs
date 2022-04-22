@@ -22,7 +22,6 @@ namespace Point1_MathOp
         public override void DoOperation(double n1, double n2)
         {
             sum = n1 + n2;
-
         }
     }
 }

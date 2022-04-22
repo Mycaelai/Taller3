@@ -6,17 +6,16 @@ using System.Threading.Tasks;
 
 namespace Point3_Chess
 {
-    class Pawn : Piece
+    class Knight : Piece
     {
-        public Pawn(string color, int colunm, int line) : base(color, colunm, line)
+        public Knight(string color, int colunm, int line) : base(color, colunm, line)
         {
-            tag = "PAWN";
+            tag = "Knight";
         }
 
         public override void Movement()
         {
             //Column {0}, lane {1}
-            position[0] = +1;
         }
     }
 }

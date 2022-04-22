@@ -78,14 +78,14 @@ namespace Point3_Chess
             int winer;
             //Se asigna el aleatorio
             Random random = new Random();
-            winer = random.Next(1, 2);
+            winer = random.Next(1, 3);
             //Se crean los casos para el jugador de Blancas y Negras
             if(winer == 1)
             {
                 Console.WriteLine("White player has won");
                 players[0].SaveScore();
             }
-            if (winer == 2)
+            else
             {
                 Console.WriteLine("Black player has won");
                 players[1].SaveScore();
