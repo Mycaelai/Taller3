@@ -62,6 +62,7 @@ namespace Point3_Chess
             Game game1 = new Game(playersa);
             game1.PlayGame();
             game1.ReferenceT();
+            Console.WriteLine();
             //Fin testeo            
 
             //Declaracion de las listas
@@ -74,9 +75,24 @@ namespace Point3_Chess
                 Console.WriteLine("1)\tCreate Players\n2)\tCreate Games\n3)\tShow Info\n4)\tExit");
                 Console.Write("\tPick and option:\t");
 
+                    
+                try
+                {
                     i = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine();
 
+                    if ((i > 0 && i < 4.1) == true)
+                        Console.WriteLine();
+                }
+                catch(FormatException error)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine(error.Message);
+                }
+                catch(ArgumentOutOfRangeException)
+                {
+                    Console.WriteLine("Out of range");
+                }
+                Console.WriteLine();
                 switch(i)
                 {
                     case 1:

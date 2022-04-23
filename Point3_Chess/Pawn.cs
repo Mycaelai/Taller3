@@ -10,7 +10,7 @@ namespace Point3_Chess
     {
         public Pawn(string color, int colunm, int line) : base(color, colunm, line)
         {
-            tag = "PAWN";
+            tag = "PAWN  ";
         }
 
         public override void Movement()

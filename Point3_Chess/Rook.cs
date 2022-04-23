@@ -10,7 +10,7 @@ namespace Point3_Chess
     {
         public Rook(string color, int colunm, int line) : base(color, colunm, line)
         {
-            tag = "ROOK";
+            tag = "ROOK  ";
         }
 
         public override void Movement()

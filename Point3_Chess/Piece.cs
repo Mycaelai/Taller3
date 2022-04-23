@@ -29,7 +29,7 @@ namespace Point3_Chess
 
         public void Show()
         {
-            Console.Write("Code: " + pieceCode + $" Color: {Color}\t" + "Position: " + position[0] + ":" + position[1] + " Tag: " + tag + " ");
+            Console.Write("Code:" + pieceCode + $" Color:{Color} " + "Position: " + position[0] + ":" + position[1] + " Tag: " + tag + "  ");
         }
 
         public void CodeCreation()

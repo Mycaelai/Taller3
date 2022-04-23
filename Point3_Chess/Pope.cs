@@ -10,7 +10,12 @@ namespace Point3_Chess
     {
         public Pope(string color, int colunm, int line) : base(color, colunm, line)
         {
-            tag = "POPE";
+            tag = "POPE  ";
+        }
+
+        public override void Movement()
+        {
+            
         }
     }
 }
