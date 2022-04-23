@@ -16,7 +16,6 @@ namespace Point3_Chess
         protected bool state;
 
         public string Color { get => color; set => color = value; }
-        public string Tag { get => tag; set => tag = value; }
 
         public Piece(string color, int colunm, int line)
         {
@@ -24,7 +23,7 @@ namespace Point3_Chess
             this.Color = color;
             position = new[] {colunm,line};
             state = true;
-            tag = "none";
+            tag = "DEFAULT";
         }
 
         public void Show()

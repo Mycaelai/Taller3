@@ -17,8 +17,7 @@ namespace Point3_Chess
 
             //En este espacio se deben de agregar todos las piezas restantes, do momento solo funciona para agregar instacias normales, se recomienda un switch o distintos ciclos
             for(int i = 0; i < pieces.Length; i++)
-            {
-                
+            { 
                 //Column {0}, lane {1}
                     pieces[i] = new Pawn("", 2, i+1);
                 if (i >= 8)                
@@ -55,9 +54,6 @@ namespace Point3_Chess
                     pieces[i] = new Queen("", 8, 4);
                 if (i >= 31)
                     pieces[i] = new King("", 8, 5);
-
-
-
                 //Las primeras 16 piezas anexadas son Blancas y las restantes Negras
                 if (i < 16)
                     pieces[i].Color = "White";

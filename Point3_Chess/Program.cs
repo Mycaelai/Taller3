@@ -19,22 +19,22 @@ o puntaje esta dado por el número de partidas ganadas, cada partida ganada otor
 o cantidadPartidasGanadas, es el número de partidas ganadas por un jugador                                                                                          DONE
 o GuardarPuntaje(), actualiza puntaje y cantidadPartidasGanadas                                                                                                     DONE
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-- Un Tablero se crea de la siguiente manera:
+- Un Tablero se crea de la siguiente manera:                                                                                                                        SECTION DONE
 o Con 32 piezas                                                                                                                                                     DONE
- 2 Reyes: 1 blanco, 1 negro                                                                                                                                        
- 2 Reinas: 1 blanca, 1 negra                                                                                                                                       
- 4 Torres: 2 blancas, 2 negras                                                                                                                                     
- 4 Alfiles: 2 blancos, 2 negros                                                                                                                                    
- 4 Caballos: 2 blancos, 2 negros                                                                                                                                   
- 16 Peones: 8 blancos, 8 negros                                                                                                                                    
+ 2 Reyes: 1 blanco, 1 negro                                                                                                                                        DONE
+ 2 Reinas: 1 blanca, 1 negra                                                                                                                                       DONE
+ 4 Torres: 2 blancas, 2 negras                                                                                                                                     DONE
+ 4 Alfiles: 2 blancos, 2 negros                                                                                                                                    DONE
+ 4 Caballos: 2 blancos, 2 negros                                                                                                                                   DONE
+ 16 Peones: 8 blancos, 8 negros                                                                                                                                    DONE
 o codigoTablero, es un número aleatorio para identificar el tablero                                                                                                 DONE
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 - Una Pieza se crea de la siguiente manera:
 o codigoPieza, es un número aleatorio para identificar cada una de las 32 piezas                                                                                    DONE
 o color, blanco o negro                                                                                                                                             DONE
 o tamaño, puede ser un valor constante, puede ser estático                                                                                                          DONE
-o posición, inicialmente cuando se crea la pieza es la posición por defecto de la pieza en el tablero de ajedrez                                                      
-o estado, inicialmente cuando se crea la pieza es verdadero (esta en juego), false es para cuando a la pieza ha sido capturada por el oponente                      
+o posición, inicialmente cuando se crea la pieza es la posición por defecto de la pieza en el tablero de ajedrez                                                    DONE 
+o estado, inicialmente cuando se crea la pieza es verdadero (esta en juego), false es para cuando a la pieza ha sido capturada por el oponente                      DONE
 o MoverPieza, es una acción que pueden realizar todas las piezas, pero que cada pieza realiza de forma diferente. Este método actualiza la propiedad posición.      
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 El programa debe tener un menú:
@@ -56,13 +56,13 @@ namespace Point3_Chess
             string n;
 
             //Testeo crear partidas 
-            Player player1 = new Player("Elen");
-            Player player2 = new Player("Alan");
-            Player[] playersa = new Player[2] { player1, player2 };
-            Game game1 = new Game(playersa);
-            game1.PlayGame();
-            game1.ReferenceT();
-            Console.WriteLine();
+            //Player player1 = new Player("Elen");
+            //Player player2 = new Player("Alan");
+            //Player[] playersa = new Player[2] { player1, player2 };
+            //Game game1 = new Game(playersa);
+            //game1.PlayGame();
+            //game1.ReferenceT();
+            //Console.WriteLine();
             //Fin testeo            
 
             //Declaracion de las listas
@@ -74,8 +74,6 @@ namespace Point3_Chess
                 Console.WriteLine("Welcome Ladys and Gentleman this is Amateur Grand Chess Tournament\n");
                 Console.WriteLine("1)\tCreate Players\n2)\tCreate Games\n3)\tShow Info\n4)\tExit");
                 Console.Write("\tPick and option:\t");
-
-                    
                 try
                 {
                     i = Convert.ToInt32(Console.ReadLine());
@@ -87,10 +85,7 @@ namespace Point3_Chess
                 {
                     Console.WriteLine();
                     Console.WriteLine(error.Message);
-                }
-                catch(ArgumentOutOfRangeException)
-                {
-                    Console.WriteLine("Out of range");
+                    Console.WriteLine();
                 }
                 Console.WriteLine();
                 switch(i)
@@ -166,8 +161,7 @@ namespace Point3_Chess
                             //game llama a jugar para crear la partida
                             game.PlayGame();
                             Console.WriteLine();
-                        }
-                        
+                        }                        
                         break;
                         //
                     case 3:
@@ -180,7 +174,6 @@ namespace Point3_Chess
                         Console.Write("You have exited the program, Sayonara\n");
                         flag = true;
                         break;
-
                 }
             } while (!flag);
         }

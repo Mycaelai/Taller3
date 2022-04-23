@@ -95,8 +95,7 @@ namespace Point3_Chess
 
         public void ReferenceT()
         {
-            //Metodo con el cual se debe poder visualizar todas la piezas y su informacion || PENDIENTE
-            //El Metodo estara el table, por lo que este metodo solo lo llama
+            //Llama al mtedo para poder visualizar las piezas de table
             table.ViewPieces();
         }
 
@@ -111,17 +110,17 @@ namespace Point3_Chess
             if(hour == 00)
             {
                 minute = random.Next(15, 59);
-                MatchTime = "0" + hour.ToString() + ":" + minute.ToString();
+                MatchTime = "0" + hour.ToString() + "hh:" + minute.ToString() + "mm";
             }
             else
             {
                 minute = random.Next(00, 59);
                 if (minute < 10)
                 {
-                    MatchTime = "0" + hour.ToString() + ":0" + minute.ToString();
+                    MatchTime = "0" + hour.ToString() + "hh:0" + minute.ToString() + "mm";
                 }
                 else
-                MatchTime = "0" + hour.ToString() + ":" + minute.ToString();
+                MatchTime = "0" + hour.ToString() + "hh:" + minute.ToString() + "mm";
             }
         }
     }
