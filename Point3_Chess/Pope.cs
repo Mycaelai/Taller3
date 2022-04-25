@@ -15,7 +15,7 @@ namespace Point3_Chess
 
         public override void Movement()
         {
-            
+            Console.WriteLine("The pope can move in any diagonal direction, without jumping over other pieces.");
         }
     }
 }

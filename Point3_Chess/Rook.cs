@@ -15,7 +15,7 @@ namespace Point3_Chess
 
         public override void Movement()
         {
-            
+            Console.WriteLine("The rook can move in any direction excluding diagonal movement, it cannot jump over other pieces");
         }
     }
 }

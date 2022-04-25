@@ -15,7 +15,7 @@ namespace Point3_Chess
 
         public override void Movement()
         {
-            
+            Console.WriteLine("The king can move ant direction but only one square at a time");
         }
     }
 }

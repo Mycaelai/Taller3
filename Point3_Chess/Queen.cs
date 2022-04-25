@@ -15,7 +15,7 @@ namespace Point3_Chess
 
         public override void Movement()
         {
-            
+            Console.WriteLine("The queen can move in all directions, any number of squares, without jumping over other pieces");
         }
     }    
 }

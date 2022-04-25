@@ -16,6 +16,7 @@ namespace Point3_Chess
         public override void Movement()
         {
             //Column {0}, lane {1}
+            Console.WriteLine("The knight can move in an L shape, with 3 squares to any non diagonal side and another square in a perpendicular direction, it can jump over pieces");
         }
     }
 }

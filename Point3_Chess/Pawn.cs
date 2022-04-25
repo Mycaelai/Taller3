@@ -16,6 +16,7 @@ namespace Point3_Chess
         public override void Movement()
         {
             //Column {0}, lane {1}
+            Console.WriteLine("The pawn can move only one square forward.");
             position[0] = +1;
         }
     }

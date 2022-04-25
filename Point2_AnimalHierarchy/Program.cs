@@ -139,14 +139,7 @@ namespace Point2_AnimalHierarchy
                         break;
 
                     case 3:
-                        //Maya Aca es la opcion para que implementes los puntos que faltan, todo lo que tiene DONE en la parte de arriba del documento esta hecho (Borra esto cuando lo hagas)
-                        /*
-                         Ver el ruido
-                         Ver elementos de las mascotas, entonces para eso puedes utilizar el Tag que puso, entonces asi emperejas con eso
-                         Una opcion para cambiar el estado de dormir a despierto y viceversa, el metodo ya esta implementado, asi que es mas por menu
-                         Los animales domesticos tiene acciones propias entoces hacerlas accesibles (Vacunar & Bañar)
-                         Puedes hacer una lista enorme o con switches dentro switches, si es asi mi recomendacion es que diferencies las opciones para domesticos
-                         */
+
                         Console.WriteLine("\nSelect an option");
                         Console.WriteLine("\n1)\tShow the noises of each animal.\n2)\tShow the name and characteristics of each animal and if they are asleep or awake.\n3)\tManage Domestic necesities (Bathing and Vaccinating). ");
                         i = Convert.ToInt32(Console.ReadLine());
