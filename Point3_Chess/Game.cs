@@ -8,6 +8,7 @@ namespace Point3_Chess
 {
     class Game
     {
+        int winer;
         string gameCode;
         Player[] players;
         Table table;
@@ -15,6 +16,7 @@ namespace Point3_Chess
 
         public string GameCode { get => gameCode; set => gameCode = value; }
         public string MatchTime { get => matchTime; set => matchTime = value; }
+        internal Player[] Players { get => players; set => players = value; }
 
         public Game( Player[] players)
         {
@@ -35,7 +37,7 @@ namespace Point3_Chess
         public void Show()
         {
             //Metodo Show Que debe mostrar los codigos de mesa y tabla, tambien el nombre de los jugadores
-            Console.WriteLine("GAME CODE: " + GameCode + "\n...");
+            Console.WriteLine("\nGAME CODE: " + GameCode + "\n...");
             Console.WriteLine(players[0].Name + " vs " + players[1].Name);
             //Confirmacion de que los jugadores tienen respectivas piezas distintas
             if(players[0].Color == true && players[1].Color == false)
@@ -44,6 +46,21 @@ namespace Point3_Chess
             Console.Write("TABLE CODE:\t");
             table.Show();
             Console.WriteLine();
+        }
+
+        public void Results()
+        {
+            Console.WriteLine("Start hour of the game\t" + matchstartTime);
+            Console.WriteLine("Duration of the game:\t" + MatchTime);
+            if (winer == 1)
+                Console.WriteLine("WHITE PLAYER HAS WON");
+            else                
+                Console.WriteLine("BLACK PLAYER HAS WON");
+        }
+
+        public void ShowName()
+        {
+            Console.WriteLine("\t" + players[0].Name + " vs " + players[1].Name);
         }
 
         private void CodeCreation()
@@ -82,12 +99,12 @@ namespace Point3_Chess
             //Se crean los casos para el jugador de Blancas y Negras
             if(winer == 1)
             {
-                Console.WriteLine("White player has won");
+                Console.WriteLine("WHITE PLAYER HAS WON");
                 players[0].SaveScore();
             }
             else
             {
-                Console.WriteLine("Black player has won");
+                Console.WriteLine("BLACK PLAYER HAS WON");
                 players[1].SaveScore();
             }
             Console.WriteLine();

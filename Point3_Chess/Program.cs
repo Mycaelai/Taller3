@@ -29,18 +29,18 @@ o Con 32 piezas                                                                 
  16 Peones: 8 blancos, 8 negros                                                                                                                                    DONE
 o codigoTablero, es un número aleatorio para identificar el tablero                                                                                                 DONE
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-- Una Pieza se crea de la siguiente manera:
+- Una Pieza se crea de la siguiente manera:                                                                                                                         SECTION DONE
 o codigoPieza, es un número aleatorio para identificar cada una de las 32 piezas                                                                                    DONE
 o color, blanco o negro                                                                                                                                             DONE
 o tamaño, puede ser un valor constante, puede ser estático                                                                                                          DONE
 o posición, inicialmente cuando se crea la pieza es la posición por defecto de la pieza en el tablero de ajedrez                                                    DONE 
 o estado, inicialmente cuando se crea la pieza es verdadero (esta en juego), false es para cuando a la pieza ha sido capturada por el oponente                      DONE
-o MoverPieza, es una acción que pueden realizar todas las piezas, pero que cada pieza realiza de forma diferente. Este método actualiza la propiedad posición.      
+o MoverPieza, es una acción que pueden realizar todas las piezas, pero que cada pieza realiza de forma diferente. Este método actualiza la propiedad posición.      Done
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-El programa debe tener un menú:
+El programa debe tener un menú:                                                                                                                                     SECTION DONE
 - Crear jugadores                                                                                                                                                   DONE
 - Crear partidas                                                                                                                                                    DONE
-- Y mostrar la información de un jugador seleccionado, y la información de una partida seleccionada (jugadores, codigoPartida, tiempoInicioPartida).                
+- Y mostrar la información de un jugador seleccionado, y la información de una partida seleccionada (jugadores, codigoPartida, tiempoInicioPartida).                DONE
 - Salir del juego                                                                                                                                                   DONE
  */
 
@@ -74,26 +74,14 @@ namespace Point3_Chess
                 Console.WriteLine("Welcome Ladys and Gentleman this is Amateur Grand Chess Tournament\n");
                 Console.WriteLine("1)\tCreate Players\n2)\tCreate Games\n3)\tShow Info\n4)\tExit");
                 Console.Write("\tPick and option:\t");
-                try
-                {
-                    i = Convert.ToInt32(Console.ReadLine());
+                i = Convert.ToInt32(Console.ReadLine());
 
-                    if ((i > 0 && i < 4.1) == true)
-                        Console.WriteLine();
-                }
-                catch(FormatException error)
-                {
-                    Console.WriteLine();
-                    Console.WriteLine(error.Message);
-                    Console.WriteLine();
-                }
-                Console.WriteLine();
                 switch(i)
                 {
                     case 1:
                         //Se inicializa a player
                         Player player;
-                        Console.Write("Add Player Name:\t");
+                        Console.Write("\nAdd Player Name:\t");
                         if(players.Count < 1)
                         {
                             n = Console.ReadLine().ToUpper();
@@ -107,21 +95,20 @@ namespace Point3_Chess
                         {
                             n = Console.ReadLine().ToUpper();
                             Console.WriteLine();
-                            for (j = 0; j < players.Count; j++)
-                            {
-                                if (players[j].Name.Contains(n))
-                                {
-                                    Console.WriteLine("There's alredy a player with that name");
-                                    Console.WriteLine("Tray again\n");
-                                }
-                                else
+                                if (!players[j].Name.Contains(n))
                                 {
                                     player = new Player(n);
                                     //Anexa a lista players & se visualiza
                                     players.Add(player);
                                     player.Show();
+                                    
                                 }
-                            }
+                                else
+                                {
+                                    Console.WriteLine("There's alredy a player with that name");
+                                    Console.WriteLine("Tray again\n");
+                                }
+                                n = "";                               
                         }
                         break;
 
@@ -131,14 +118,23 @@ namespace Point3_Chess
 
                         if (players.Count < 2)
                         {
-                            Console.WriteLine("None enough players, require minimum 2\n");
-                            Console.WriteLine(players.Count);
+                            Console.WriteLine("\nNone enough players, require minimum 2");
+                            Console.WriteLine("Current amount of players: " + players.Count + "\n");
                         }
                         else
                         {
-                            i = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\nPlayer name list:");
+                            j = 0;
+                            foreach (Player item in players)
+                            {
+                                Console.WriteLine($" {j + 1}) Player name: " + item.Name);
+                                j++;
+                            }
+                            Console.Write("\nAdd White player:\t");
+                            i = Convert.ToInt32(Console.ReadLine()) - 1;
                             playersList.Add(players[i]);
-                            j = Convert.ToInt32(Console.ReadLine());
+                            Console.Write("Add Black player:\t");
+                            j = Convert.ToInt32(Console.ReadLine()) - 1;
                             if (i == j)
                             {
                                 Console.WriteLine("You cannot add the same player twice");
@@ -149,7 +145,6 @@ namespace Point3_Chess
                             {
                                 playersList.Add(players[j]);
                             }
-
                             //Se crea un nuevo arreglo Player y se copian los elementos del ArrayList a una matriz de tipo especifico
                             Player[] obj = (Player[])playersList.ToArray(typeof(Player));
                             //Aca Se crea la instancia de Game
@@ -165,13 +160,56 @@ namespace Point3_Chess
                         break;
                         //
                     case 3:
-                        //Anexar info de partidas y jugadores
+                        if (players.Count == 0 || games.Count == 0)
+                        {
+                            Console.WriteLine("\nThere isn't any player added in the tournamet yet or any game play till the moment\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nVisualize options:\n\t1) Players\n\t2) Games");
+                            Console.Write("\tPick an option:\t");
+                            i = Convert.ToInt32(Console.ReadLine());
+                            //Anexar info de partidas y jugadores
+                            switch (i)
+                            {
+                                case 1:
+                                    Console.WriteLine("\nPlayer name list:");
+                                    j = 0;
+                                    foreach (Player item in players)
+                                    {
+                                        Console.WriteLine($" {j + 1}) Player name: " + item.Name);
+                                        j++;
+                                    }
 
+                                    Console.Write("\nPlease add the player position you want to check: ");
+                                    j = Convert.ToInt32(Console.ReadLine()) - 1;
+                                    players[j].Show();
+                                    Console.WriteLine();
+                                    break;
+
+                                case 2:
+                                    Console.WriteLine("\nPlayer name list:");
+                                    j = 0;
+                                    foreach (Game item in games)
+                                    {
+                                        Console.WriteLine($" {j + 1}) Game: " + item.GameCode);
+                                        item.ShowName();
+                                        j++;
+                                    }
+
+                                    Console.Write("\nAdd the game position you want to check: ");
+                                    j = Convert.ToInt32(Console.ReadLine()) - 1;
+                                    games[j].Show();
+                                    games[j].Results();
+                                    Console.WriteLine();
+                                    break;
+                            }
+                        }
                         break;
 
                     case 4:
                         //Salida del programa
-                        Console.Write("You have exited the program, Sayonara\n");
+                        Console.Write("\nYou have exited the program, Sayonara\n");
                         flag = true;
                         break;
                 }

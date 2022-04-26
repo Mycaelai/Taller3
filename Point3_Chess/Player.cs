@@ -28,18 +28,19 @@ namespace Point3_Chess
 
         public void Show()
         {
-            Console.WriteLine("Player name:\t" + Name);
-            Console.WriteLine("Score:\t" + Score);
-            Console.WriteLine("Games Won:\t" + GamesWon);
+            Console.WriteLine("\tPlayer name:\t" + Name);
+            Console.WriteLine("\tScore:\t\t" + Score);
+            Console.WriteLine("\tGames Won:\t" + GamesWon);
+            Console.WriteLine();
         }
 
         public void SaveScore()
         {
             Score = Score + 100;
             GamesWon = GamesWon + 1;
-            Console.WriteLine("Update\nPlayer name:\t" + Name);
-            Console.WriteLine("New Score:\t" + Score);
-            Console.WriteLine("Games Won:\t" + GamesWon);
+            Console.WriteLine("\n\tUpdate\n\tPlayer name:\t" + Name);
+            Console.WriteLine("\tNew Score:\t" + Score);
+            Console.WriteLine("\tGames Won:\t" + GamesWon);
         }
 
     }
