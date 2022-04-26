@@ -127,7 +127,7 @@ namespace Point2_AnimalHierarchy
                                 break;
 
                             case 2:
-                                Console.WriteLine("This is a domestic specie, so you need to add a name:\t");
+                                Console.Write("This is a domestic specie, so you need to add a name:\t");
                                 Dog dog;
                                 n1 = Console.ReadLine();
                                 dog = new Dog(canineFood[random.Next(canineFood.Length)],animalSizes[random.Next(animalSizes.Length)],origins[random.Next(origins.Length)],claws[random.Next(claws.Length)], n1, sleepState[random.Next(sleepState.Length)]);
