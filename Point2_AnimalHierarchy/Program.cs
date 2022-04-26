@@ -2,25 +2,24 @@
 using System.Collections.Generic;
 
 /*
- Enunciado:
-- Todos los animales pueden comer, pero cada uno come de forma diferente                DONE
-- Todos los animales están despiertos o dormidos (estado)   DONE
-- Todos los animales hacen un ruido, pero cada uno lo hace un ruido diferente           DONE
-- Solo las mascotas (gatos o perros):                                                   DONE
-o Tienen un nombre                                                                      DONE
-o Pueden ser vacunados: a los perros se les vacuna de forma subcutánea, a los gatos
-de forma inocular                                                                       DONE
-o Pueden ser bañados: a los perros con champú, a los gatos con jabón                    DONE
-
-Crear un menú que permita:
-- Crear felinos o caninos                                                               DONE
-- Si se elige felinos debe permitir crear leones, tigres, o gatos                       DONE
-- Si se elige caninos debe permitir crear perros o lobos                                DONE
-- Ver el ruido que hace cada animal.
-- Ver el nombre de las mascotas creadas, su origen, lo que pueden comer, y su tamaño.   DONE
-- Ver los animales que están dormidos o despiertos, (despiertos estado=1; dormidos    DONE
-estado=0)
-- El programa termina cuando el usuario elija la opción salir.                          DONE
+ Enunciado:                                                                                     TASK DONE
+- Todos los animales pueden comer, pero cada uno come de forma diferente                        DONE
+- Todos los animales están despiertos o dormidos (estado)                                       DONE    
+- Todos los animales hacen un ruido, pero cada uno lo hace un ruido diferente                   DONE
+- Solo las mascotas (gatos o perros):                                                           DONE
+o Tienen un nombre                                                                              DONE
+o Pueden ser vacunados: a los perros se les vacuna de forma subcutánea, a los gatos             DONE
+de forma inocular                                                                               DONE
+o Pueden ser bañados: a los perros con champú, a los gatos con jabón                            DONE
+--------------------------------------------------------------------------------------------------------------------------------------------------
+Crear un menú que permita:                                                                      SECTION DONE
+- Crear felinos o caninos                                                                       DONE
+- Si se elige felinos debe permitir crear leones, tigres, o gatos                               DONE
+- Si se elige caninos debe permitir crear perros o lobos                                        DONE
+- Ver el ruido que hace cada animal.                                                            DONE
+- Ver el nombre de las mascotas creadas, su origen, lo que pueden comer, y su tamaño.           DONE
+- Ver los animales que están dormidos o despiertos, (despiertos estado=1; dormidos estado=0)  DONE
+- El programa termina cuando el usuario elija la opción salir.                                  DONE
 
  */
 
