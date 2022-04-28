@@ -8,7 +8,7 @@ namespace Point3_Chess
 {
     class Game
     {
-        int winer;
+        
         string gameCode;
         Player[] players;
         Table table;
@@ -77,7 +77,7 @@ namespace Point3_Chess
             String resultCode = new String(code);
             gameCode = resultCode;
         }
-
+        int winer = 0;
         public void PlayGame()
         {
             //Aca se le da el Color a cada uno de los jugadores
@@ -92,7 +92,7 @@ namespace Point3_Chess
             Console.WriteLine("Duration of the game:\t" + MatchTime);
             Console.WriteLine();
             //Aca se crea la varible para definir al ganadador
-            int winer;
+            
             //Se asigna el aleatorio
             Random random = new Random();
             winer = random.Next(1, 3);
@@ -107,6 +107,7 @@ namespace Point3_Chess
                 Console.WriteLine("BLACK PLAYER HAS WON");
                 players[1].SaveScore();
             }
+            
             Console.WriteLine();
         }
 
