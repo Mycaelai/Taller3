@@ -55,15 +55,15 @@ namespace Point3_Chess
             bool flag = false;
             string n;
 
-            //Testeo crear partidas 
-            //Player player1 = new Player("Elen");
-            //Player player2 = new Player("Alan");
-            //Player[] playersa = new Player[2] { player1, player2 };
-            //Game game1 = new Game(playersa);
-            //game1.PlayGame();
-            //game1.ReferenceT();
-            //Console.WriteLine();
-            //Fin testeo            
+            //Testeo crear partidas
+            Player player1 = new Player("Elen");
+            Player player2 = new Player("Alan");
+            Player[] playersa = new Player[2] { player1, player2 };
+            Game game1 = new Game(playersa);
+            game1.PlayGame();
+            game1.ReferenceT();
+            Console.WriteLine();
+            //Fin testeo
 
             //Declaracion de las listas
             List<Player> players = new List<Player>();
